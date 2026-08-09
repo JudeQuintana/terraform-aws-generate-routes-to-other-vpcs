@@ -1,7 +1,7 @@
 /*
 * # Generate Routes to Other VPCs Description
 *
-* Run the test suites with `terraform test` in the `./modules/generate_routes_to_other_vpcs` directory.
+* Run the test suites with `terraform test` in the `generate-routes-to-other-vpcs` repo.
 * ```
 * tests/generate_routes.tftest.hcl... in progress
 *   run "setup"... pass
@@ -44,7 +44,8 @@
 * ```hcl
 * # snippet
 * module "generate_routes_to_other_vpcs" {
-*   source = "./modules/generate_routes_to_other_vpcs"
+*   source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
+*   version = "1.0.3"
 *
 *   vpcs = var.vpcs
 * }

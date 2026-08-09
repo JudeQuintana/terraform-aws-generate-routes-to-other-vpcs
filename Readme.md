@@ -1,6 +1,6 @@
 # Generate Routes to Other VPCs Description
 
-Run the test suites with `terraform test` in the `./modules/generate_routes_to_other_vpcs` directory.
+Run the test suites with `terraform test` in the `generate-routes-to-other-vpcs` repo.
 ```
 tests/generate_routes.tftest.hcl... in progress
   run "setup"... pass
@@ -43,7 +43,8 @@ A list of route objects makes it easier to handle when passing to other route re
 ```hcl
 # snippet
 module "generate_routes_to_other_vpcs" {
-  source = "./modules/generate_routes_to_other_vpcs"
+  source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
+  version = "1.0.3"
 
   vpcs = var.vpcs
 }
@@ -70,7 +71,7 @@ resource "aws_route" "this" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.3.0 |
 
 ## Providers
@@ -88,12 +89,12 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_vpcs"></a> [vpcs](#input\_vpcs) | map of tiered\_vpc\_ng objects | <pre>map(object({<br/>    network_cidr            = string<br/>    secondary_cidrs         = optional(list(string), [])<br/>    ipv6_network_cidr       = optional(string)<br/>    ipv6_secondary_cidrs    = optional(list(string), [])<br/>    private_route_table_ids = list(string)<br/>    public_route_table_ids  = list(string)<br/>  }))</pre> | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_ipv4"></a> [ipv4](#output\_ipv4) | output routes as set of objects instead of a map it makes it easier to handle when passing to other route resource types (vpc, tgw) toset([{ route\_table\_id = "rtb-12345678", destination\_cidr\_block = "x.x.x.x/x" }, ...]) |
 | <a name="output_ipv6"></a> [ipv6](#output\_ipv6) | n/a |
