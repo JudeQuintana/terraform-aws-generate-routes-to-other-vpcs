@@ -103,7 +103,7 @@ Success! 66 passed, 0 failed.
 ```hcl
 # snippet
 module "generate_routes_to_other_vpcs" {
- source  = "JudeQuintana/generate-routes-to-other-vpc/aws"
+ source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
  version = "1.1.0"
 
   routing_policy = var.routing_policy
@@ -129,7 +129,7 @@ A list of route objects makes it easier to handle when passing to other route re
 ```hcl
 # snippet
 module "generate_routes_to_other_vpcs" {
- source  = "JudeQuintana/generate-routes-to-other-vpc/aws"
+ source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
  version = "1.0.3"
 
   vpcs = var.vpcs

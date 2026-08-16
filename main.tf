@@ -104,7 +104,7 @@
 * ```hcl
 * # snippet
 * module "generate_routes_to_other_vpcs" {
-*  source  = "JudeQuintana/generate-routes-to-other-vpc/aws"
+*  source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
 *  version = "1.1.0"
 *
 *   routing_policy = var.routing_policy
@@ -130,7 +130,7 @@
 * ```hcl
 * # snippet
 * module "generate_routes_to_other_vpcs" {
-*  source  = "JudeQuintana/generate-routes-to-other-vpc/aws"
+*  source  = "JudeQuintana/generate-routes-to-other-vpcs/aws"
 *  version = "1.0.3"
 *
 *   vpcs = var.vpcs
