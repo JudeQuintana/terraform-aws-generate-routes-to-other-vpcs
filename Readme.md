@@ -12,7 +12,7 @@ Run the test suites with `terraform init`, then `terraform test` in the top leve
 ...
 Success! 152 passed, 0 failed.
 ```
-`v1.2.1`
+`v1.2.2`
 - Breaking change: `reachability` output restructured from `map(string)` to versioned envelope `{ schema_version = 1, entries = [{ from, to, verdict, reason }] }`.
 - New `reachability_simplified` output: flat `map(string)` projection (`"from:to" => "verdict:reason"`) for quick lookups.
 - `previous_reachability` type changed to accept the same envelope format as the reachability output (zero-transformation round-trip).
